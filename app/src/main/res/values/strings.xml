@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Mobile-dev</string>
+    <string name="Login_text">Login</string>
+    <string name="Login_email_input">Please enter your email</string>
+    <string name="Login_password_input">Please input your password</string>
+    <string name="Login_btn_text">Login</string>
+    <string name="Login_email_value" />
+    <string name="Login_password_value" />
 </resources>
