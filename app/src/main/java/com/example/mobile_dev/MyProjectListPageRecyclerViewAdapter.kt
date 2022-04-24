@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 
 import com.example.mobile_dev.placeholder.PlaceholderContent.PlaceholderItem
@@ -31,19 +32,18 @@ class MyProjectListPageRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        holder.btnView.text = item.content
+
     }
 
     override fun getItemCount(): Int = values.size
 
     inner class ViewHolder(binding: FragmentProjectBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
+        val btnView: Button = binding.itemBtn
 
         override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
+            return super.toString() + " '" + btnView.text + "'"
         }
     }
 
