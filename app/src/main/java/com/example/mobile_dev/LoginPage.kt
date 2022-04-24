@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobile_dev.databinding.LoginPageFragmentBinding
 
@@ -18,7 +19,9 @@ class LoginPage : Fragment() {
     companion object {
         fun newInstance() = LoginPage()
     }
-    private lateinit var viewModel: ViewModel
+
+    // delegate by viewModels, to prevent lose the state of view model
+    private val viewModel: ViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +44,8 @@ class LoginPage : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this)[ViewModel::class.java]
-        // TODO: Use the ViewModel
+//        viewModel = ViewModelProvider(this)[ViewModel::class.java]
+//        // TODO: Use the ViewModel
 
     }
 
@@ -51,9 +54,16 @@ class LoginPage : Fragment() {
         _binding = null
     }
     private fun loginBtnOnClick(){
-        val text = "Hello toast!"
+        val texts = "Welcome! ${viewModel.nickname.value}"
+        val textf = "Invalid email or password,please try again"
         val duration = Toast.LENGTH_SHORT
-        Toast.makeText(context, text, duration).show()
+        val emailInput = binding.editTextTextEmailAddress.text.toString()
+        val pwdInput = binding.editTextTextPassword.text.toString()
+        if(emailInput == viewModel.loginEmail.value && pwdInput == viewModel.loginPwd.value){
+            Toast.makeText(context, texts, duration).show()
+        }else{
+            Toast.makeText(context, textf, duration).show()
+        }
 
     }
 
