@@ -9,7 +9,11 @@
         android:id="@+id/loginPage"
         android:name="com.example.mobile_dev.LoginPage"
         android:label="login_page_fragment"
-        tools:layout="@layout/login_page_fragment" />
+        tools:layout="@layout/login_page_fragment" >
+        <action
+            android:id="@+id/action_loginPage_to_projectListPageFragment"
+            app:destination="@id/projectListPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/projectListPageFragment"
         android:name="com.example.mobile_dev.ProjectListPageFragment"
