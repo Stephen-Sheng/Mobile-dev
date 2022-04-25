@@ -6,4 +6,8 @@
     <string name="Login_btn_text">Login</string>
     <string name="Login_email_value" />
     <string name="Login_password_value" />
+    <string name="manager_menu_item1">search</string>
+    <string name="manager_menu_item2">settings</string>
+    <string name="string_manager_menu_item2">settings</string>
+    <string name="manager_menu_item3">navigation</string>
 </resources>
