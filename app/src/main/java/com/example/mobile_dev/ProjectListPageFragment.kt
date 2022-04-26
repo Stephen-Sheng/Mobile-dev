@@ -2,21 +2,20 @@ package com.example.mobile_dev
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_dev.databinding.FragmentProjectListBinding
-import com.example.mobile_dev.placeholder.PlaceholderContent
 
 /**
  * A fragment representing a list of Items.
  */
-class ProjectListPageFragment : Fragment() {
+class ProjectListPageFragment : Fragment(){
 
     private var _binding: FragmentProjectListBinding? = null
     private val binding get() = _binding!!
@@ -39,9 +38,13 @@ class ProjectListPageFragment : Fragment() {
         return binding.root
     }
 
+    private fun adapterOnClick() {
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.list.adapter = MyProjectListPageRecyclerViewAdapter(PlaceholderContent.ITEMS)
+        binding.list.adapter = MyProjectListPageRecyclerViewAdapter(ViewModel.PlaceholderContent.ITEMS
+        ) { adapterOnClick() }
         binding.list.layoutManager = when {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
@@ -62,9 +65,11 @@ class ProjectListPageFragment : Fragment() {
                     Toast.makeText(context, text3, duration).show()
                 }
             }
-            true
         }
+
     }
+
+
 
     companion object {
 
@@ -80,4 +85,12 @@ class ProjectListPageFragment : Fragment() {
                 }
             }
     }
+
+//    override fun onItemClick(position: Int) {
+//        TODO("Not yet implemented")
+//    }
+//
+//    override fun onLongClick(position: Int) {
+//        TODO("Not yet implemented")
+//    }
 }

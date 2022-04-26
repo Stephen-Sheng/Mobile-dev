@@ -1,7 +1,11 @@
 package com.example.mobile_dev.placeholder
 
+import androidx.fragment.app.activityViewModels
+import com.example.mobile_dev.ViewModel
 import java.util.ArrayList
 import java.util.HashMap
+import androidx.fragment.app.activityViewModels
+
 
 /**
  * Helper class for providing sample content for user interfaces created by
@@ -9,6 +13,7 @@ import java.util.HashMap
  *
  * TODO: Replace all uses of this class before publishing your app.
  */
+
 object PlaceholderContent {
 
     /**

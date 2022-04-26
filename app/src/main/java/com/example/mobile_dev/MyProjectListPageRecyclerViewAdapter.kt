@@ -1,5 +1,6 @@
 package com.example.mobile_dev
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +16,12 @@ import com.example.mobile_dev.databinding.FragmentProjectBinding
  * TODO: Replace the implementation with code for your data type.
  */
 class MyProjectListPageRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>
+    private val values: List<ViewModel.PlaceholderContent.PlaceholderItem>,
+    private val onClickRecycler: () -> Unit
 ) : RecyclerView.Adapter<MyProjectListPageRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
 
         return ViewHolder(
             FragmentProjectBinding.inflate(
@@ -41,6 +44,13 @@ class MyProjectListPageRecyclerViewAdapter(
     inner class ViewHolder(binding: FragmentProjectBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val btnView: Button = binding.itemBtn
+        init {
+            btnView.setOnClickListener {
+                Log.d("DEBUG",values[absoluteAdapterPosition].toString())
+                onClickRecycler()
+            }
+        }
+
 
         override fun toString(): String {
             return super.toString() + " '" + btnView.text + "'"

@@ -18,5 +18,14 @@
         android:id="@+id/projectListPageFragment"
         android:name="com.example.mobile_dev.ProjectListPageFragment"
         android:label="fragment_project_list"
-        tools:layout="@layout/fragment_project_list" />
+        tools:layout="@layout/fragment_project_list" >
+        <action
+            android:id="@+id/action_projectListPageFragment_to_projectDetailFragment"
+            app:destination="@id/projectDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectDetailFragment"
+        android:name="com.example.mobile_dev.ProjectDetailFragment"
+        android:label="fragment_project_detail"
+        tools:layout="@layout/fragment_project_detail" />
 </navigation>
