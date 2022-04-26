@@ -1,10 +1,12 @@
 package com.example.mobile_dev
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.mobile_dev.databinding.FragmentProjectDetailBinding
 
 
@@ -22,6 +24,7 @@ class ProjectDetailFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentProjectDetailBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: ViewModel by activityViewModels()
     private var param1: String? = null
     private var param2: String? = null
 
@@ -40,6 +43,13 @@ class ProjectDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentProjectDetailBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.v("LOGIN", "onCLick2")
+        binding.exText.text = viewModel.itemContent.value
+
     }
 
     companion object {

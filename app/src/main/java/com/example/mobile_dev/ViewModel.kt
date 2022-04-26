@@ -16,6 +16,14 @@ class ViewModel : ViewModel() {
     private val _nickname = MutableLiveData<String>("Yutong")
     val nickname: LiveData<String> get() = _nickname
 
+    private val _itemContent = MutableLiveData<String>("default")
+    val itemContent: LiveData<String> get() = _itemContent
+
+    fun changeItemContent(value: String){
+        _itemContent.value = value
+    }
+
+
     object PlaceholderContent {
 
         /**

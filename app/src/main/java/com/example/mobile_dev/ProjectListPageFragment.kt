@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_dev.databinding.FragmentProjectListBinding
@@ -39,6 +40,8 @@ class ProjectListPageFragment : Fragment(){
     }
 
     private fun adapterOnClick() {
+        viewModel.changeItemContent("new one")
+        findNavController().navigate(R.id.action_projectListPageFragment_to_projectDetailFragment)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
