@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_dev.databinding.FragmentProjectDetailBinding
 
 
@@ -25,6 +29,7 @@ class ProjectDetailFragment : Fragment() {
     private var _binding: FragmentProjectDetailBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ViewModel by activityViewModels()
+    private var columnCount = 1
     private var param1: String? = null
     private var param2: String? = null
 
@@ -44,11 +49,36 @@ class ProjectDetailFragment : Fragment() {
         _binding = FragmentProjectDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
+    private fun adapterOnClick() {
+//        viewModel.changeItemContent("new one")
+//        findNavController().navigate(R.id.action_projectListPageFragment_to_projectDetailFragment)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.v("LOGIN", "onCLick2")
-        binding.exText.text = viewModel.itemContent.value
+        binding.taskList.adapter = MyTaskListPageRecyclerViewAdapter(ViewModel.TaskObj.ITEMS
+        ) { adapterOnClick() }
+        binding.taskList.layoutManager = when {
+            columnCount <= 1 -> LinearLayoutManager(context)
+            else -> GridLayoutManager(context, columnCount)
+        }
+        val duration = Toast.LENGTH_SHORT
+        binding.managerMenu.setOnItemReselectedListener { item ->
+            when (item.itemId) {
+                R.id.action_search ->{
+                    val text1 = "click 1"
+                    Toast.makeText(context, text1, duration).show()
+                }
+                R.id.action_settings ->{
+                    val text2 = "click 2"
+                    Toast.makeText(context, text2, duration).show()
+                }
+                R.id.action_navigation ->{
+                    val text3 = "click 3"
+                    Toast.makeText(context, text3, duration).show()
+                }
+            }
+        }
 
     }
 
