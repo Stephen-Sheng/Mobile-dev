@@ -40,6 +40,9 @@ class LoginPage : Fragment() {
             // Button Tapped
             loginBtnOnClick()
         }
+        binding.gotoRegisterBtn.setOnClickListener{
+            goToRegBtnOnClick()
+        }
 
     }
 
@@ -54,6 +57,10 @@ class LoginPage : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private  fun goToRegBtnOnClick(){
+        findNavController().navigate(R.id.action_loginPage_to_registerFragment)
     }
     private fun loginBtnOnClick(){
 

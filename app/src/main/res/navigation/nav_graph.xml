@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginPage_to_employeeTaskListFragment"
             app:destination="@id/employeeTaskListFragment" />
+        <action
+            android:id="@+id/action_loginPage_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectListPageFragment"
@@ -48,4 +51,9 @@
         android:name="com.example.mobile_dev.EmployeeDetailFragment"
         android:label="fragment_employee_detail"
         tools:layout="@layout/fragment_employee_detail" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.mobile_dev.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

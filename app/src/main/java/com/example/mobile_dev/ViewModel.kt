@@ -24,7 +24,19 @@ class ViewModel : ViewModel() {
     private val _nickname2 = MutableLiveData<String>("zhihong")
     val nickname2: LiveData<String> get() = _nickname2
 
+    private val _regEmail = MutableLiveData<String>(R.string.register_email_input.toString())
+    val regEmail: LiveData<String> get() = _regEmail
+    private val _regName = MutableLiveData<String>(R.string.reg_fullname_input.toString())
+    val regName: LiveData<String> get() = _regName
+    private val _regPwd = MutableLiveData<String>(R.string.register_pwd_input.toString())
+    val regPwd: LiveData<String> get() = _regPwd
 
+
+    fun changeRegInfo(name:String,email:String,pwd:String){
+        _regEmail.value = email
+        _regName.value = name
+        _regPwd.value = pwd
+    }
 
     private val _itemContent = MutableLiveData<String>("default")
     val itemContent: LiveData<String> get() = _itemContent
