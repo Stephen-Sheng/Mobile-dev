@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_employee_detail.xml" value="0.2546875" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_employee_detail_content.xml" value="0.26927083333333335" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_employee_task.xml" value="0.26927083333333335" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_employee_task_list.xml" value="0.264" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_project.xml" value="0.1" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_project_detail.xml" value="0.26851851851851855" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_project_list.xml" value="0.26851851851851855" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/fragment_task.xml" value="0.264" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/layout/login_page_fragment.xml" value="0.2" />
+        <entry key="..\:/Mobile-dev/app/src/main/res/menu/manager_menu.xml" value="0.36614583333333334" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.171" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.171" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />

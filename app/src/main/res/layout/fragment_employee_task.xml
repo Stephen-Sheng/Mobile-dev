@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/employee_task_item_btn"
+        android:layout_width="240dp"
+        android:layout_height="101dp"
+        android:layout_margin="@dimen/text_margin"
+        android:backgroundTint="#F4EFEF"
+        android:textColor="#020202" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="complete" />
+
+</LinearLayout>

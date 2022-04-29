@@ -16,6 +16,16 @@ class ViewModel : ViewModel() {
     private val _nickname = MutableLiveData<String>("Yutong")
     val nickname: LiveData<String> get() = _nickname
 
+   //employee
+    private val _loginEmail2 = MutableLiveData<String>("zhihong")
+    val loginEmail2: LiveData<String> get() = _loginEmail2
+    private val _loginPwd2 = MutableLiveData<String>("lzh1234")
+    val loginPwd2: LiveData<String> get() = _loginPwd2
+    private val _nickname2 = MutableLiveData<String>("zhihong")
+    val nickname2: LiveData<String> get() = _nickname2
+
+
+
     private val _itemContent = MutableLiveData<String>("default")
     val itemContent: LiveData<String> get() = _itemContent
 

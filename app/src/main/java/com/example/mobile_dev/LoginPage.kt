@@ -56,17 +56,31 @@ class LoginPage : Fragment() {
         _binding = null
     }
     private fun loginBtnOnClick(){
+
+        //yutong
         val texts = "Welcome! ${viewModel.nickname.value}"
         val textf = "Invalid email or password,please try again"
         val duration = Toast.LENGTH_SHORT
         val emailInput = binding.editTextTextEmailAddress.text.toString()
         val pwdInput = binding.editTextTextPassword.text.toString()
+        //zhihong
+        val texts_zhihong = "Welcome! ${viewModel.nickname2.value}"
         if(emailInput == viewModel.loginEmail.value && pwdInput == viewModel.loginPwd.value){
             Toast.makeText(context, texts, duration).show()
             findNavController().navigate(R.id.action_loginPage_to_projectListPageFragment)
-        }else{
+        }
+        //zhihong
+        else if(emailInput == viewModel.loginEmail2.value && pwdInput == viewModel.loginPwd2.value){
+            Toast.makeText(context, texts_zhihong, duration).show()
+            findNavController().navigate(R.id.action_loginPage_to_employeeTaskListFragment)
+        } //zhihong
+
+        else{
             Toast.makeText(context, textf, duration).show()
         }
+
+
+
 
     }
 

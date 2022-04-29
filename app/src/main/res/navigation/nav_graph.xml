@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginPage_to_projectListPageFragment"
             app:destination="@id/projectListPageFragment" />
+        <action
+            android:id="@+id/action_loginPage_to_employeeTaskListFragment"
+            app:destination="@id/employeeTaskListFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectListPageFragment"
@@ -31,4 +34,18 @@
         android:name="com.example.mobile_dev.ProjectDetailFragment"
         android:label="fragment_project_detail"
         tools:layout="@layout/fragment_project_detail" />
+    <fragment
+        android:id="@+id/employeeTaskListFragment"
+        android:name="com.example.mobile_dev.EmployeeTaskListFragment"
+        android:label="fragment_employee_task_list"
+        tools:layout="@layout/fragment_employee_task_list" >
+        <action
+            android:id="@+id/action_employeeTaskListFragment_to_employeeDetailFragment"
+            app:destination="@id/employeeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeDetailFragment"
+        android:name="com.example.mobile_dev.EmployeeDetailFragment"
+        android:label="fragment_employee_detail"
+        tools:layout="@layout/fragment_employee_detail" />
 </navigation>
